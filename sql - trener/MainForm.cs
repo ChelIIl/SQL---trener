@@ -14,6 +14,10 @@ namespace sql___trener
     {
         public MainForm()
         {
+            AutoForm af = new AutoForm();
+
+            af.ShowDialog();
+
             InitializeComponent();
 
             this.Fill();

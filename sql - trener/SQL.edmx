@@ -60,6 +60,7 @@
           <Property Name="Points" Type="int" Nullable="false" />
           <Property Name="BirthDate" Type="date" Nullable="false" />
           <Property Name="Mail" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK__CompleteTa__Date__34C8D9D1">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -254,6 +255,7 @@
           <Property Name="Points" Type="Int32" Nullable="false" />
           <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Mail" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CompleteTasks" Relationship="Self.FK__CompleteTa__Date__34C8D9D1" FromRole="User" ToRole="CompleteTasks" />
           <NavigationProperty Name="Skill" Relationship="Self.FK__User__Mail__2C3393D0" FromRole="User" ToRole="Skill" />
         </EntityType>
@@ -457,6 +459,7 @@
                 <ScalarProperty Name="Points" ColumnName="Points" />
                 <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
