@@ -42,6 +42,7 @@ namespace sql___trener
             this.refresh_brn = new System.Windows.Forms.Button();
             this.skill_panel = new System.Windows.Forms.Panel();
             this.dif_panel = new System.Windows.Forms.Panel();
+            this.add_btn = new System.Windows.Forms.Button();
             this.skill_panel.SuspendLayout();
             this.dif_panel.SuspendLayout();
             this.SuspendLayout();
@@ -191,11 +192,22 @@ namespace sql___trener
             this.dif_panel.Size = new System.Drawing.Size(170, 85);
             this.dif_panel.TabIndex = 12;
             // 
+            // add_btn
+            // 
+            this.add_btn.Location = new System.Drawing.Point(345, 297);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(75, 35);
+            this.add_btn.TabIndex = 13;
+            this.add_btn.Text = "Добавить задание";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 373);
+            this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dif_panel);
             this.Controls.Add(this.skill_panel);
             this.Controls.Add(this.refresh_brn);
@@ -229,6 +241,7 @@ namespace sql___trener
         private System.Windows.Forms.Button refresh_brn;
         private System.Windows.Forms.Panel skill_panel;
         private System.Windows.Forms.Panel dif_panel;
+        private System.Windows.Forms.Button add_btn;
     }
 }
 

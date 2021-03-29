@@ -19,6 +19,11 @@ namespace sql___trener
 
         private void enter_btn_Click(object sender, EventArgs e)
         {
+            Auth();
+        }
+
+        public void Auth()
+        {
             List<User> usli = DBConnection.Entities.Users.ToList();
 
             foreach (User user in usli)
@@ -31,8 +36,8 @@ namespace sql___trener
 
             MessageBox.Show("Неверный логин или пароль!");
 
-            Finish:
-                this.Close();
+        Finish:
+            this.Close();
         }
 
         private void create_acc_lbl_Click(object sender, EventArgs e)

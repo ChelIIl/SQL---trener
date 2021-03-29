@@ -71,6 +71,11 @@ namespace sql___trener
 
         public void Search()
         {
+            SearchTask();
+        }
+
+        public void SearchTask()
+        {
             List<Task> li = DBConnection.Entities.Tasks.ToList();
             List<Task> l = new List<Task>();
 
@@ -85,7 +90,7 @@ namespace sql___trener
                 this.Fill(l);
             }
 
-            else if(normal_radio.Checked)
+            else if (normal_radio.Checked)
             {
                 foreach (Task t in li)
                 {
@@ -96,7 +101,7 @@ namespace sql___trener
                 this.Fill(l);
             }
 
-            else if(hard_radio.Checked)
+            else if (hard_radio.Checked)
             {
                 foreach (Task t in li)
                 {
@@ -107,7 +112,7 @@ namespace sql___trener
                 this.Fill(l);
             }
 
-            if(begin_radio.Checked)
+            if (begin_radio.Checked)
             {
                 foreach (Task t in li)
                 {
@@ -118,7 +123,7 @@ namespace sql___trener
                 this.Fill(l);
             }
 
-            else if(adv_radio.Checked)
+            else if (adv_radio.Checked)
             {
                 foreach (Task t in li)
                 {
@@ -129,7 +134,7 @@ namespace sql___trener
                 this.Fill(l);
             }
 
-            else if(prof_radio.Checked)
+            else if (prof_radio.Checked)
             {
                 foreach (Task t in li)
                 {
@@ -151,6 +156,15 @@ namespace sql___trener
             begin_radio.Checked = false;
             adv_radio.Checked = false;
             prof_radio.Checked = false;
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            AddTaskForm atf = new AddTaskForm();
+
+            atf.ShowDialog();
+
+            this.Fill();
         }
     }
 }
