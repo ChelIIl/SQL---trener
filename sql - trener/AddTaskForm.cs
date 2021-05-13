@@ -43,7 +43,7 @@ namespace sql___trener
             {
                 if (s.SkillName == skill_comb.Text)
                 {
-                    task.Skill.SkillId = s.SkillId;
+                    task.Skills = s.SkillId;
                     break;
                 }
             }
@@ -51,7 +51,7 @@ namespace sql___trener
             {
                 if (d.DifName == diff_comb.Text)
                 {
-                    task.Difficulty.DifId = d.DifId;
+                    task.Difficult = d.DifId;
                 }
             }
 

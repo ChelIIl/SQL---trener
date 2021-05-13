@@ -12,6 +12,8 @@ namespace sql___trener
 {
     public partial class AutoForm : Form
     {
+        public User user { get; set; }
+
 		public AutoForm()
         {
             InitializeComponent();
@@ -26,18 +28,19 @@ namespace sql___trener
         {
             List<User> usli = DBConnection.Entities.Users.ToList();
 
-            foreach (User user in usli)
+            foreach (User us in usli)
             {
-                if (login_txt.Text == user.Login || pass_txt.Text == user.Password)
+                if (login_txt.Text == us.Login || pass_txt.Text == us.Password)
                 {
-                    goto Finish;
+                    this.user = us;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
-
-            MessageBox.Show("Неверный логин или пароль!");
-
-        Finish:
-            this.Close();
+            if (this.user == null)
+            {
+                MessageBox.Show("Неверный логин или пароль!");
+            }
         }
 
         private void create_acc_lbl_Click(object sender, EventArgs e)

@@ -43,6 +43,8 @@ namespace sql___trener
             this.skill_panel = new System.Windows.Forms.Panel();
             this.dif_panel = new System.Windows.Forms.Panel();
             this.add_btn = new System.Windows.Forms.Button();
+            this.profile_lbl = new System.Windows.Forms.Label();
+            this.del_btn = new System.Windows.Forms.Button();
             this.skill_panel.SuspendLayout();
             this.dif_panel.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +56,9 @@ namespace sql___trener
             this.tasks_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tasks_list.FormattingEnabled = true;
             this.tasks_list.ItemHeight = 16;
-            this.tasks_list.Location = new System.Drawing.Point(0, 0);
+            this.tasks_list.Location = new System.Drawing.Point(1, 32);
             this.tasks_list.Name = "tasks_list";
-            this.tasks_list.Size = new System.Drawing.Size(247, 370);
+            this.tasks_list.Size = new System.Drawing.Size(368, 338);
             this.tasks_list.TabIndex = 0;
             this.tasks_list.DoubleClick += new System.EventHandler(this.tasks_list_DoubleClick);
             // 
@@ -64,7 +66,7 @@ namespace sql___trener
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(253, 9);
+            this.label1.Location = new System.Drawing.Point(375, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 24);
             this.label1.TabIndex = 1;
@@ -110,7 +112,7 @@ namespace sql___trener
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(253, 117);
+            this.label2.Location = new System.Drawing.Point(375, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(159, 24);
             this.label2.TabIndex = 5;
@@ -154,7 +156,7 @@ namespace sql___trener
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(345, 338);
+            this.search_btn.Location = new System.Drawing.Point(467, 338);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(75, 23);
             this.search_btn.TabIndex = 9;
@@ -164,7 +166,7 @@ namespace sql___trener
             // 
             // refresh_brn
             // 
-            this.refresh_brn.Location = new System.Drawing.Point(253, 338);
+            this.refresh_brn.Location = new System.Drawing.Point(375, 338);
             this.refresh_brn.Name = "refresh_brn";
             this.refresh_brn.Size = new System.Drawing.Size(75, 23);
             this.refresh_brn.TabIndex = 10;
@@ -177,7 +179,7 @@ namespace sql___trener
             this.skill_panel.Controls.Add(this.begin_radio);
             this.skill_panel.Controls.Add(this.adv_radio);
             this.skill_panel.Controls.Add(this.prof_radio);
-            this.skill_panel.Location = new System.Drawing.Point(253, 144);
+            this.skill_panel.Location = new System.Drawing.Point(375, 144);
             this.skill_panel.Name = "skill_panel";
             this.skill_panel.Size = new System.Drawing.Size(170, 97);
             this.skill_panel.TabIndex = 11;
@@ -187,14 +189,14 @@ namespace sql___trener
             this.dif_panel.Controls.Add(this.easy_radio);
             this.dif_panel.Controls.Add(this.normal_radio);
             this.dif_panel.Controls.Add(this.hard_radio);
-            this.dif_panel.Location = new System.Drawing.Point(253, 36);
+            this.dif_panel.Location = new System.Drawing.Point(375, 36);
             this.dif_panel.Name = "dif_panel";
             this.dif_panel.Size = new System.Drawing.Size(170, 85);
             this.dif_panel.TabIndex = 12;
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(345, 297);
+            this.add_btn.Location = new System.Drawing.Point(467, 297);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(75, 35);
             this.add_btn.TabIndex = 13;
@@ -202,11 +204,35 @@ namespace sql___trener
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
+            // profile_lbl
+            // 
+            this.profile_lbl.AutoSize = true;
+            this.profile_lbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.profile_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.profile_lbl.Location = new System.Drawing.Point(12, 9);
+            this.profile_lbl.Name = "profile_lbl";
+            this.profile_lbl.Size = new System.Drawing.Size(71, 18);
+            this.profile_lbl.TabIndex = 14;
+            this.profile_lbl.Text = "профиль";
+            this.profile_lbl.Click += new System.EventHandler(this.profile_lbl_Click);
+            // 
+            // del_btn
+            // 
+            this.del_btn.Location = new System.Drawing.Point(375, 297);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(75, 35);
+            this.del_btn.TabIndex = 15;
+            this.del_btn.Text = "Удалить задание";
+            this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 373);
+            this.ClientSize = new System.Drawing.Size(554, 373);
+            this.Controls.Add(this.del_btn);
+            this.Controls.Add(this.profile_lbl);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dif_panel);
             this.Controls.Add(this.skill_panel);
@@ -242,6 +268,8 @@ namespace sql___trener
         private System.Windows.Forms.Panel skill_panel;
         private System.Windows.Forms.Panel dif_panel;
         private System.Windows.Forms.Button add_btn;
+        private System.Windows.Forms.Label profile_lbl;
+        private System.Windows.Forms.Button del_btn;
     }
 }
 

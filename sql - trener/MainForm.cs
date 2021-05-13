@@ -12,13 +12,28 @@ namespace sql___trener
 {
     public partial class MainForm : Form
     {
+        User user;
+
         public MainForm()
         {
-            AutoForm af = new AutoForm();
-
-            af.ShowDialog();
-
             InitializeComponent();
+            
+            using (var af = new AutoForm())
+            { 
+                var res = af.ShowDialog();
+                if(res == DialogResult.OK)
+                {
+                    this.user = af.user;
+                }
+            }
+
+            if(this.user.Role == "Пользователь")
+            {
+                add_btn.Visible = false;
+                del_btn.Visible = false;
+            }    
+
+            profile_lbl.Text = user.Login.ToString();
 
             this.Fill();
         }
@@ -56,7 +71,7 @@ namespace sql___trener
 
             else
             {
-                TaskForm tf = new TaskForm(task);
+                TaskForm tf = new TaskForm(task, user);
 
                 tf.ShowDialog();
 
@@ -165,6 +180,31 @@ namespace sql___trener
             atf.ShowDialog();
 
             this.Fill();
+        }
+
+        private void profile_lbl_Click(object sender, EventArgs e)
+        {
+            ProfileForm pf = new ProfileForm(user);
+
+            pf.ShowDialog();
+
+        }
+
+        private void del_btn_Click(object sender, EventArgs e)
+        {
+            var obj = (Task)tasks_list.SelectedItem;
+            List<Task> li = DBConnection.Entities.Tasks.ToList();
+
+            foreach (Task item in li)
+            {
+                if(item.TaskId == obj.TaskId)
+                {
+                    DBConnection.Entities.Tasks.Remove(item);
+                    DBConnection.Entities.SaveChanges();
+                    this.Fill();
+                    break;
+                }
+            }
         }
     }
 }
